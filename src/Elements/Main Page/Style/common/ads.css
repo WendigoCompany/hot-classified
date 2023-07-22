@@ -1,0 +1,93 @@
+.mpg-ads-cont {
+    border: .3vh solid #262626;
+    width: 100%;
+
+    border-radius: .5%;
+    background-color: #cccccc46;
+}
+
+.mpg-ads-cont-desk{
+    padding: 3vh 0vh 8vh 0vh;
+}
+
+.mpg-ads-cont-mob{
+    padding: 3vh 0vh 8vh 0vh;
+}
+
+
+.ads-cont-tit {
+    text-align: center;
+}
+
+
+.ads-img-cont {
+
+}
+
+
+.ads-img-cont-desk {
+    display: inline-block;
+    padding: .5vh 1vw;
+    margin: 1vh 1vw;
+    border-radius: 1%;
+    border: .2vh solid #000000;
+    background-color: #00000056;
+    float: left;
+}
+
+
+
+
+
+
+.ads-img-desk {
+    display: inline-block;
+    background-image: url("../../../../media/t1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20vw;
+    height: 40vh;
+}
+
+.ads-img-mob {
+
+    background-image: url("../../../../media/t1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 86vw;
+    height: 40vh;
+    margin: 3vh 5vw;
+    border: .6vh solid #00000030;
+}
+
+
+.ads-tit{
+    font-size: 4vh;
+}
+
+.ads-tit-desk{
+    font-size: 4vh;
+}
+
+.ads-tit-mob{
+    display: block;
+    font-size: 3vh;
+}
+
+
+.ads-desc-mob {
+display: none;
+}
+
+
+.ads-desc-desk {
+    display: block;
+    padding: 0vh 1.5vw;
+    font-size: 3vh;
+    word-wrap: break-word;
+    width: 60vw;
+    height: 34vh;
+    overflow: hidden;
+}
