@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+/* 
+
+font-family: 'Tektur', cursive;
+
+
+
+*/
+
+body{
+    background-image: url("../../../../media/background\ clasiffi.png");
+    background-attachment: fixed;
+}
+
+
+
+.pro-ads-cont{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.pro-cont-tit {
+    text-align: center;
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    text-shadow: #000000 3px 5px 2px,#000000 3px 5px 2px,#000000 3px 5px 2px,#000000 3px 5px 2px;
+    opacity: .9;
+}
+
+
+
+
+.ads-desc{
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    opacity: .9;
+}
+
+
+
+
+
+.pro-img-visu-cont{
+    position: none;
+    z-index: 10;
+    background-color: #0000008b;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.pro-img-visu-cont-mob{
+overflow: hidden;
+}
+
+
+/* .pro-img-visu-cont-mob{    
+    width: 100vw;
+    height: 100vh;
+
+}
+
+
+.pro-img-visu-cont-desk{    
+    width: 100vw;
+    height: 100vh;
+
+} */
+
+
+.pro-gall-cont {
+    border: .3vh solid #262626;
+    width: 100%;
+    border-radius: .5%;
+    background-color: #cccccc46;
+}
+
+
+.pro-gall-img{
+    display: inline-block;
+    background-image: url("../../../../media/t1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 10vw;
+    height: 20vh;
+    cursor: pointer;
+    margin: 1vh 1vw;
+}
+
+.pro-desc-cont{
+    border: .3vh solid #262626;
+    width: 100%;
+    margin: 3vh 0vw;
+    height: 10vh;
+    border-radius: .5%;
+    background-color: #cccccc46;
+}
+
+.pro-img-visu-mob{
+    width: 100vw;
+    margin: 50% 0%;
+  
+}
+
+.pro-img-visu-desk{
+    position: absolute;
+    top: 3%;
+    left: 8%;
+    width: 84vw;
+    border-radius: .2%;
+    z-index: 20;
+}
+
+.pro-close-btn{
+    color: #8482827c;
+    background-color: transparent;
+
+}
+
+.pro-close-btn-desk{
+    border: .5vh solid #8482827c;
+    font-size: 3vh;
+    padding: 1vh 1vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 3%;
+    left: 1%;
+    cursor: pointer;
+}
+
+.pro-close-btn{
+
+}

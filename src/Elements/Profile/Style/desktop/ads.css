@@ -1,9 +1,9 @@
-.mpg-ads-cont-desk {
+.pro-ads-cont-desk {
     padding: 3vh 0vh 5vh 0vh;
 
 }
 
-.ads-img-cont-desk {
+.pro-ads-img-cont-desk {
     display: inline-block;
     padding: .5vh 1vw;
     margin: 1vh 1vw;
@@ -16,20 +16,20 @@
 
 
 
-.ads-img-desk {
+.pro-ads-img-desk {
     display: inline-block;
     background-image: url("../../../../media/t1.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 20vw;
-    height: 40vh;
+    width: 30vw;
+    height: 50vh;
     cursor: pointer;
 }
 
 
 
-.ads-tit-desk {
+.pro-tit-desk {
     display: inline-block;
     font-size: 4vh;
     cursor: pointer;
@@ -37,11 +37,9 @@
     height: 1vh;
 }
 
-.ads-tit-desk:hover {
-    color: #84d3e7;
-}
 
-.ads-desc-desk {
+
+.pro-ads-desc-desk {
     display: block;
     padding: 0vh 1.5vw;
     font-size: 3vh;
