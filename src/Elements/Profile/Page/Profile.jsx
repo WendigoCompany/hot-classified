@@ -18,6 +18,18 @@ let waifu_data;
 
 waifu_data = get_waifu_data();
 
+const showText = () => {
+  const int = setInterval(() => {
+    try {
+      document.getElementById("pro-description").innerHTML =
+        waifu_data.desc_full;
+      console.log(1);
+      clearInterval(int);
+    } catch (error) {}
+  }, 10);
+};
+showText();
+
 export default function Profile() {
   const device = useRezise();
 
@@ -61,7 +73,7 @@ export default function Profile() {
             show(waifu_data.img_main);
           }}
           style={{
-            backgroundImage : `url('${basicURL + waifu_data.img_main}')`
+            backgroundImage: `url('${basicURL + waifu_data.img_main}')`,
           }}
           className={`pro-ads-img pro-ads-img-${device}`}
         ></h3>
@@ -82,20 +94,7 @@ export default function Profile() {
       </div>
 
       <div className={`pro-desc-cont pro-desc-cont-${device}`}>
-        <p className={` ads-desc ads-desc-${device}`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ullam
-          quasi animi harum debitis omnis voluptate perferendis, ipsum vel, in
-          exercitationem? Laudantium, possimus architecto accusamus ut ipsum
-          vel, in exercitationem? Laudantium, possimus architecto accusamus ut
-          vel aspernatur natus illo? Los architecto accusamus ut vel aspernatur
-          natus illo? voluptate perferendis, ipsum vel, in exercitationem?
-          Laudantium, possimus architecto accusamus ut vel ? Laudantium,
-          possimus architecto accusamus ut vel aspernatur natus illo? Los
-          architecto accusamus ut vel aspernatur natus illo? voluptate
-          perferendis, ipsum vel, in exercitationem? Laudantium, possimus
-          architecto accusamus ut vel aspernatur natus illo? ullam quasi animi
-          harum debitis
-        </p>
+        <p id="pro-description" className={` pro-desc pro-desc-${device}`}></p>
       </div>
     </div>
   );
