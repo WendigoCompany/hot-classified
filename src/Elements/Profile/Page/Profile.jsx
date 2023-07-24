@@ -2,35 +2,37 @@ import { useRezise } from "../../../Context/Mobile";
 import "../Style/ProfilePage_manifiest.css";
 import "../Style/ADScard_manifiest.css";
 import background from "../../../media/t1.png";
+import { get_waifus } from "../../../db/waifu.class";
+import {
+  get_waifu_data,
+  hide,
+  move_to_main,
+  show,
+} from "../Functions/functions";
+
+const basicURL = "https://drive.google.com/uc?export=view&id=";
 
 const router_code = process.env.NODE_ENV === "development" ? "" : "#";
 
-export const show = (img_id) => {
-  document.getElementById("pro-img-visu-cont").style.display = "block";
-  document.getElementById("pro-img-visu-cont").style.position = "sticky";
-  setTimeout(() => {
-    document.getElementById("pro-img-visu-cont").style.opacity = 1;
-  }, 200);
-};
+let waifu_data;
 
-export const hide = (e) => {
-  if (e.target.id !== "pro-sho-img") {
-    document.getElementById("pro-img-visu-cont").style.opacity = 0;
-    setTimeout(() => {
-      document.getElementById("pro-img-visu-cont").style.display = "none";
-    }, 200);
-  }
-};
+waifu_data = get_waifu_data();
 
 export default function Profile() {
   const device = useRezise();
 
   return (
     <div>
-
-    <div>
-      <button></button>
-    </div>
+      <div className={`pro-close`}>
+        <button
+          onClick={() => {
+            move_to_main();
+          }}
+          className={`pro-close-btn`}
+        >
+          BACK
+        </button>
+      </div>
 
       <div
         onClick={(e) => {
@@ -43,7 +45,6 @@ export default function Profile() {
         <img
           id="pro-sho-img"
           className={`pro-img-visu pro-img-visu-${device}`}
-          src={background}
           alt=""
         />
       </div>
@@ -57,22 +58,45 @@ export default function Profile() {
       <div className={`pro-ads-cont pro-ads-cont-${device}`}>
         <h3
           onClick={() => {
-            show();
+            show(waifu_data.img_main);
+          }}
+          style={{
+            backgroundImage : `url('${basicURL + waifu_data.img_main}')`
           }}
           className={`pro-ads-img pro-ads-img-${device}`}
         ></h3>
       </div>
 
       <div className={`pro-gall-cont pro-gall-cont-${device}`}>
-        <h3
-          onClick={() => {
-            show();
-          }}
-          className={`pro-gall-img pro-gall-img-${device}`}
-        ></h3>
+        {waifu_data.img_gall.map((img) => (
+          <h3
+            onClick={() => {
+              show(img);
+            }}
+            style={{
+              backgroundImage: `url('${basicURL + img}')`,
+            }}
+            className={`pro-gall-img pro-gall-img-${device}`}
+          ></h3>
+        ))}
       </div>
 
-      <div className={`pro-desc-cont pro-desc-cont-${device}`}></div>
+      <div className={`pro-desc-cont pro-desc-cont-${device}`}>
+        <p className={` ads-desc ads-desc-${device}`}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ullam
+          quasi animi harum debitis omnis voluptate perferendis, ipsum vel, in
+          exercitationem? Laudantium, possimus architecto accusamus ut ipsum
+          vel, in exercitationem? Laudantium, possimus architecto accusamus ut
+          vel aspernatur natus illo? Los architecto accusamus ut vel aspernatur
+          natus illo? voluptate perferendis, ipsum vel, in exercitationem?
+          Laudantium, possimus architecto accusamus ut vel ? Laudantium,
+          possimus architecto accusamus ut vel aspernatur natus illo? Los
+          architecto accusamus ut vel aspernatur natus illo? voluptate
+          perferendis, ipsum vel, in exercitationem? Laudantium, possimus
+          architecto accusamus ut vel aspernatur natus illo? ullam quasi animi
+          harum debitis
+        </p>
+      </div>
     </div>
   );
 }

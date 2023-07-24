@@ -40,12 +40,27 @@ body{
     opacity: .9;
 }
 
+.pro-close{
+    position: absolute;
+    z-index: 10;
+    top: 1%;
+    left: 1%;
 
+}
 
+.pro-close-btn{
+    border: .5vh solid #848282a7;
+    font-size: 3vh;
+    padding: 1vh 1vw;
+    color: #848282a7;
+    position: absolute;
+    cursor: pointer;
+}
 
 
 .pro-img-visu-cont{
-    position: none;
+    display: none;
+    position: absolute;
     z-index: 10;
     background-color: #0000008b;
     top: 0;
