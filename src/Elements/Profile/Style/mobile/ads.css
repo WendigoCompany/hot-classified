@@ -27,7 +27,29 @@
 }
 
 
-.ads-desc-mob {
-display: none;
+.pro-desc-mob {
+    width: 90vw;
+
 }
 
+
+
+.pro-img-visu-mob {
+    width: 100vw;
+    margin: 50% 0%;
+
+}
+
+
+.pro-gall-img-mob {
+    width: 30vw;
+    height: 20vh;
+    margin: 1vh 1vw;
+    cursor: pointer;
+}
+
+
+
+.pro-img-visu-cont-mob {
+    overflow: hidden;
+}

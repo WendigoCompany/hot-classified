@@ -6,6 +6,7 @@ export class Waifu {
     this.desc_full = "";
     this.title = "";
     this.id = 0;
+    this.tags = []; 
   }
 }
 

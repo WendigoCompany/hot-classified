@@ -9,28 +9,33 @@ import {
   move_to_main,
   show,
 } from "../Functions/functions";
+import { github_url } from "../../../App";
 
-const basicURL = "https://drive.google.com/uc?export=view&id=";
-
-const router_code = process.env.NODE_ENV === "development" ? "" : "#";
+const basicURL = "https://raw.githubusercontent.com/WendigoCompany/Assets/main/Waifu%20Classicated/";
 
 let waifu_data;
-
-waifu_data = get_waifu_data();
 
 const showText = () => {
   const int = setInterval(() => {
     try {
       document.getElementById("pro-description").innerHTML =
         waifu_data.desc_full;
-      console.log(1);
       clearInterval(int);
+      console.log(1);
     } catch (error) {}
   }, 10);
 };
-showText();
 
 export default function Profile() {
+  const getParams = () => {
+    let params = window.location.href;
+    params = params.replace(github_url + "#/profile?id=", "");
+    params = params.replace("http://localhost:3000/profile?id=", "");
+    waifu_data = get_waifu_data(parseInt(params));
+  };
+  getParams();
+  showText();
+
   const device = useRezise();
 
   return (

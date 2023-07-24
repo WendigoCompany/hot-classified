@@ -1,13 +1,20 @@
+import { github_url } from "../../../App";
 import { useRezise } from "../../../Context/Mobile";
 
 const move_to_waifu = (w_id) => {
-  sessionStorage.setItem("id", w_id);
-  window.location.href = router_code + "/profile";
+  if(!github_url.includes("localhost")){
+    window.location.href = github_url + router_code + "/profile?id=" + w_id;
+
+  }else{
+    window.location.href = github_url + router_code + "profile?id=" + w_id;
+  }
 };
 
 const router_code = process.env.NODE_ENV === "development" ? "" : "#";
 
-const basicURL = "https://drive.google.com/uc?export=view&id=";
+const basicURL = "https://raw.githubusercontent.com/WendigoCompany/Assets/main/Waifu%20Classicated/";
+
+
 
 
 

@@ -1,10 +1,22 @@
+import { github_url } from "../../../App";
 import { get_waifus } from "../../../db/waifu.class";
 
 const waifus =  get_waifus();
-const basicURL = "https://drive.google.com/uc?export=view&id=";
+const basicURL = "https://raw.githubusercontent.com/WendigoCompany/Assets/main/Waifu%20Classicated/";
+
+const router_code = process.env.NODE_ENV === "development" ? "" : "#";
+
+
 export const move_to_main = (w_id) => {
-    sessionStorage.setItem("id", w_id);
-    window.location.href = "/";
+
+
+    if(!github_url.includes("localhost")){
+      window.location.href = github_url + router_code+"/?page=1";
+  
+    }else{
+      window.location.href = github_url + router_code+"?page=1";    }
+  
+
   };
   
   
@@ -26,9 +38,8 @@ export const move_to_main = (w_id) => {
     }
   };
   
-  export const get_waifu_data =()=>{
-      const id = sessionStorage.getItem("id");
-      if(id !== null){
+  export const get_waifu_data =(id)=>{
+      if(id !== undefined){
         return waifus.filter(wa  => wa.id === parseInt(id))[0];
       }else{
         move_to_main()
