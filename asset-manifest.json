@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hot-classified/static/css/main.e8c03f48.css",
-    "main.js": "/hot-classified/static/js/main.12d3920b.js",
+    "main.js": "/hot-classified/static/js/main.4d9873d0.js",
     "static/media/t1.png": "/hot-classified/static/media/t1.085261b296061b1f82bb.png",
     "static/media/background clasiffi.png": "/hot-classified/static/media/background clasiffi.53c52393b1474f2b2621.png",
     "index.html": "/hot-classified/index.html",
     "main.e8c03f48.css.map": "/hot-classified/static/css/main.e8c03f48.css.map",
-    "main.12d3920b.js.map": "/hot-classified/static/js/main.12d3920b.js.map"
+    "main.4d9873d0.js.map": "/hot-classified/static/js/main.4d9873d0.js.map"
   },
   "entrypoints": [
     "static/css/main.e8c03f48.css",
-    "static/js/main.12d3920b.js"
+    "static/js/main.4d9873d0.js"
   ]
 }
