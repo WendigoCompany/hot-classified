@@ -1,0 +1,38 @@
+.disclaim-title {
+    text-align: center;
+    font-family: 'Tektur', cursive;
+    color: #97d0e0;
+}
+
+.disclaim-title-mob {
+    font-size: 5vh;
+}
+
+.disclaim-title-desk {
+    font-size: 5vw; 
+}
+
+.alert-img-cont {
+    text-align: center;
+}
+
+.disclaim {
+    font-family: 'Tektur', cursive;
+
+    color: #df9090
+}
+
+.disc-accept {
+    font-family: 'Tektur', cursive;
+    color: #7cda63;
+    background-color: transparent;
+    border: .3vh solid #7cda63;
+}
+
+.disc-cancel {
+    font-family: 'Tektur', cursive;
+    color: #c62b2b;
+    background-color: transparent;
+    border: .3vh solid #c62b2b;
+}
+

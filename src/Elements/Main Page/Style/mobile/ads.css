@@ -1,0 +1,34 @@
+
+
+.mpg-ads-cont-mob{
+    padding: 1vh 0vh 1vh 0vh;
+}
+.ads-img-mob {
+
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 86vw;
+    height: 30vh;
+    margin: 3vh 5vw;
+    border: .6vh solid #00000030;
+    border-radius: 1%;
+}
+
+.ads-tit-mob{
+    /* display: block; */
+    font-size: 3vh;
+
+    display: inline-block;
+
+    cursor: pointer;
+    transition: color .5s;
+
+}
+
+
+.ads-desc-mob {
+display: none;
+}
+

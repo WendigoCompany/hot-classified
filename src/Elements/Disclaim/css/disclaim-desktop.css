@@ -1,0 +1,33 @@
+.alert-img-desk {
+    width: 20%;
+}
+
+
+.disclaim-desk {
+    font-size: 3vw;
+}
+
+
+
+.disc-accept-desk {
+    cursor: pointer;
+    font-size: 3vw;
+    margin: 5vh 0vh 5vh 0vh;
+    transition: background-color .4s, color .4s;
+}
+
+.disc-cancel-desk {
+    cursor: pointer;
+    font-size: 3vw;
+    transition: background-color .4s, color .4s;
+}
+
+.disc-accept-desk:hover {
+    color: #000000;
+    background-color: #7cda63;
+}
+
+.disc-cancel-desk:hover {
+    color: #000000;
+    background-color: #c62b2b;
+}

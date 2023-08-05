@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+/* 
+
+font-family: 'Tektur', cursive;
+
+
+
+*/
+
+body{
+    background-image: url("../../../../media/background\ clasiffi.png");
+    background-attachment: fixed;
+}
+
+
+.mpg-ads-cont {
+    border: .3vh solid #262626;
+    width: 100%;
+    border-radius: .5%;
+    background-color: #cccccc27;
+    margin: 0vh 0vh 10vh 0vh;
+}
+
+
+.ads-cont-tit {
+    text-align: center;
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    text-shadow: #000000 3px 5px 2px,#000000 3px 5px 2px,#000000 3px 5px 2px,#000000 3px 5px 2px;
+    opacity: .9;
+}
+
+
+
+
+.ads-desc{
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    opacity: .9;
+}
+
+
+
+
+
+

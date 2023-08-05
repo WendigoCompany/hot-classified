@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+/* 
+
+font-family: 'Tektur', cursive;
+
+
+
+*/
+
+body {
+    background-image: url("../../../../media/background\ clasiffi.png");
+    background-attachment: fixed;
+}
+
+
+
+.pro-ads-cont {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+.pro-cont-tit {
+    text-align: center;
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    text-shadow: #000000 3px 5px 2px, #000000 3px 5px 2px, #000000 3px 5px 2px, #000000 3px 5px 2px;
+    opacity: .9;
+}
+
+
+
+
+.ads-desc {
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    opacity: .9;
+}
+
+.pro-close {
+    position: absolute;
+    z-index: 10;
+    top: 1%;
+    left: 1%;
+
+}
+
+.pro-close-btn {
+    border: .5vh solid #848282a7;
+    font-size: 3vh;
+    padding: 1vh 1vw;
+    color: #848282a7;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.pro-img-visu-cont {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background-color: #0000008b;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+
+/* .pro-img-visu-cont-mob{    
+    width: 100vw;
+    height: 100vh;
+
+}
+
+
+.pro-img-visu-cont-desk{    
+    width: 100vw;
+    height: 100vh;
+
+} */
+
+
+.pro-gall-cont {
+    border: .3vh solid #262626;
+    width: 100%;
+    border-radius: .5%;
+    background-color: #cccccc46;
+}
+
+
+.pro-gall-img {
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.pro-desc-cont {
+    border: .3vh solid #262626;
+    width: 100%;
+    margin: 3vh 0vw;
+    max-height: fit-content;
+
+    min-height: 10vh;
+    border-radius: .5%;
+    background-color: #cccccc46;
+}
+
+
+.pro-close-btn {
+    color: #8482827c;
+    background-color: transparent;
+
+}
+
+
+
+.pro-close-btn {
+    border: .5vh solid #8482827c;
+    cursor: pointer;
+}
+
+.pro-desc {
+    font-family: 'Tektur', cursive;
+    color: #ffffff;
+    opacity: .9;
+    display: block;
+    padding: 0vh 1.5vw;
+    font-size: 3vh;
+    word-wrap: break-word;
+    width: 90vw;
+}
+
+
+
+.pro-spec-btn{
+    width: 100%;
+    font-family: 'Tektur', cursive;
+    background-color: #86e5a1;
+    border-radius:2%;
+}
+
+.pro-img-arrow{
+    position: fixed;
+    color: #ffffff;
+    border: .5vh solid #ffffff;
+    z-index: 1000;
+}
+
+
+
