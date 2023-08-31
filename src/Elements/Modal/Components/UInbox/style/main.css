@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+/* 
+
+font-family: 'Tektur', cursive;
+
+
+
+*/
+
+
+.inb-empty-msj-mob {
+    font-family: 'Tektur', cursive;
+    text-align: center;
+    color: #c3c3c3;
+    font-size: 5vh;
+    margin: 50% 0%;
+    text-shadow: #474747 3px 5px 2px,#474747 3px 5px 2px,#474747 3px 5px 2px;
+}

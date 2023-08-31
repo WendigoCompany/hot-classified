@@ -13,6 +13,7 @@ import { finder_system } from "../function/finder";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { getDisclaim } from "../../../Context/Disclaim";
+import User_Banner from "../../Msj/Components/User_Banner";
 
 const w_id = 1;
 
@@ -90,6 +91,13 @@ export default function Main_Page() {
     <div>
       {/* <img className={`background background-${device}`} src={background} alt="" />  */}
 
+{/* <div className={`mpg-user-banner mpg-user-banner-${device}`}>
+  <button className={`mpg-user-msj mpg-user-msj-${device} `}></button>
+</div> */}
+
+  <User_Banner></User_Banner>
+
+
       <div className={`mpg-title-cont mpg-title-cont-${device}`}>
         <h1 className={`mpg-title mpg-title-${device}`}>
           {"hot classified".toUpperCase()}
@@ -142,6 +150,7 @@ export default function Main_Page() {
         </div>
       </div>
       {(JSON.parse(sessionStorage.getItem("disclaim")) !== null) ? (filtrate_waifus()) : ("")}
+      
     </div>
   );
 }

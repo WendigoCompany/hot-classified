@@ -1,0 +1,40 @@
+.usinb-modal-cont{
+    background-color: #767676cb;
+    position: fixed;
+}
+
+.usinb-modal-close{
+    color: #ff8787;
+    background-color: transparent;
+    border-color: #ff8787;
+}
+
+
+
+.usinb-modal-close-mob{
+font-size: 3vh;
+margin: 2% 2%;
+}
+
+
+
+
+.usinb-modal-cont-mob{
+    width: 90vw;
+    height: 80vh;
+    top: 0;
+}
+
+
+
+
+.usinb-modal-cont-desk{
+    width: 10vw;
+    height: 10vh;
+    top: 0;
+}
+
+.usinb-modal-close-desk{
+    
+}
+
