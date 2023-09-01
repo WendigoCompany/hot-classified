@@ -1,6 +1,7 @@
 import { get_waifus } from "../../../../db/waifu.class";
+import Chat from "./Chat";
 
-export default function Mobile_Card({ data }) {
+export default function Mobile_Card({ data, setCards }) {
   const waifus = get_waifus();
   const data_waifu = {};
   const find_waifu = () => {
@@ -16,25 +17,30 @@ export default function Mobile_Card({ data }) {
     url = "";
     url_aux.map((num) => (url += num.toString()));
     data_waifu.url = found.img_main;
+    data_waifu.name = found.name;
     data_waifu.url = data_waifu.url.replace(`${url}.png`, "icon.png");
-    console.log(data);
-    data_waifu.no_read = data.no_read;
-    data_waifu.mid = data.mid;
+    data.url =  data_waifu.url;
     //  url = found.img_main.substring(0,found.img_main.indexOf("_"));
     // console.log(url);
     // console.log(found);
   };
 
   find_waifu();
-  console.log(data_waifu);
   return (
-    <div className={`mobcard-wai-card`}>
+    <div
+      className={`mobcard-wai-card`}
+      onClick={() => {
+        setCards(<Chat data={data} setCards={setCards}></Chat>);
+      }}
+    >
       <img
         src={`https://raw.githubusercontent.com/PowderMaid/classificated/main/${data_waifu.url}`}
         className={`mobcard-wai-icon`}
         alt=""
       />
-      <h3 className={`mobcard-wai-nmsj`}><span className={`span-nmsj-txt`}>NEW MESSAGES:</span> <span className={`span-nmsj-num`}>{data_waifu.no_read}</span></h3>
+      <h3 className={`mobcard-wai-nmsj`}>
+        <span className={`span-nmsj-num`}>{data_waifu.name.toUpperCase()}</span>
+      </h3>
     </div>
   );
 }

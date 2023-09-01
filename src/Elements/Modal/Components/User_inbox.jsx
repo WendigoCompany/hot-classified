@@ -8,10 +8,14 @@ export default function User_inbox({}) {
 
   
   return (
-    <div className={`usinb-modal-cont usinb-modal-cont-${device}`}>
+    <div className={`usinb-modal-cont usinb-modal-cont-${device}`}
+
+      
+    >
       <button
         className={`usinb-modal-close usinb-modal-close-${device}`}
         onClick={() => {
+          sessionStorage.removeItem("modal")
           setModal("");
         }}
       >

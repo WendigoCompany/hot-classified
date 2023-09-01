@@ -89,6 +89,15 @@ export default function create_kurumi_tokisaki() {
     🕒 Max: [ask to the girl] hour/s. <br>
   `;
 
+  main_data.name = "Kurumi Tokisaki"
+
+  main_data.chat=[
+    {
+      id: 0,
+      txt : "COME PUTO!"
+    }
+  ]
+
   main_data.img_gall = [
     "toki_kurumi/tokikurumi_1.png",
     "toki_kurumi/tokikurumi_2.png",

@@ -9,14 +9,7 @@ font-family: 'Tektur', cursive;
 */
 
 
-.inb-empty-msj-mob {
-    font-family: 'Tektur', cursive;
-    text-align: center;
-    color: #c3c3c3;
-    font-size: 5vh;
-    margin: 50% 0%;
-    text-shadow: #474747 3px 5px 2px,#474747 3px 5px 2px,#474747 3px 5px 2px;
-}
+
 
 .span-nmsj-txt{
     color: #dadada;
@@ -24,4 +17,37 @@ font-family: 'Tektur', cursive;
 
 .span-nmsj-num{
     color: #ff8d8d;
+}
+
+
+
+.chat-img{
+    
+}
+
+
+.dialog-cont{
+
+    background-color: #6e6e6e;
+}
+.dialog-txt{
+    font-family: 'Tektur', cursive;
+    text-shadow: #000000 3px 5px 2px,#000000 3px 5px 2px,#000000 3px 5px 2px;
+    color: #e8fbfb;
+    
+}
+
+
+
+.chat-btn{
+    font-family: 'Tektur', cursive;
+    background-image: url('../../../../../media/send_icon.png');
+    background-color: #7186d9;
+}
+
+
+.chat-btn-back{
+    color: #000000;
+    background-color: #7fc3ed;
+    border: 2px solid #7fc3ed;
 }

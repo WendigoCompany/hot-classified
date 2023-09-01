@@ -1,18 +1,96 @@
+.inb-empty-msj-mob {
+    font-family: 'Tektur', cursive;
+    text-align: center;
+    color: #c3c3c3;
+    font-size: 5vh;
+    margin: 50% 0%;
+    text-shadow: #474747 3px 5px 2px, #474747 3px 5px 2px, #474747 3px 5px 2px;
+}
+
 .mobcard-wai-icon {
     display: inline-block;
     width: 14vh;
 }
 
 .mobcard-wai-card {
-    width: 92%;
-    margin: 0vh 2vw;
+    width: 50%;
+    margin: 3vh 20vw;
     border: 5px solid #00000084;
     padding: 1%;
     border-radius: 3%;
+    text-align: center;
 }
 
 .mobcard-wai-nmsj {
     display: inline-block;
     font-family: 'Tektur', cursive;
-    text-shadow: #474747 3px 5px 2px,#474747 3px 5px 2px,#474747 3px 5px 2px;
+    text-shadow: #474747 3px 5px 2px, #474747 3px 5px 2px, #474747 3px 5px 2px;
 }
+
+.dialog-cont-mob {
+    display: inline-block;
+    width: 88%;
+    border: 3px solid #000000;
+    margin: 4% 4%;
+    padding: 0% 2%;
+    height: 550px;
+}
+
+
+
+.chat-img-mob {
+    width: 175px;
+    margin: 5% 0% 2% 0%;
+
+}
+
+.chat-cont-mob {
+    text-align: center;
+}
+
+.dialog-txt-mob {
+    font-size: 2.5vh;
+
+}
+
+.user-interacction-mob {
+    position: fixed;
+    bottom: 13%;
+    width: 100%;
+    left: 10%;
+}
+
+.chat-input-mob {
+    display: inline-block;
+    width: 70%;
+    font-size: 2.5vh;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Tektur', cursive;
+}
+
+
+
+
+
+.chat-btn-mob {
+
+    background-size: 30% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 50px;
+    border-radius: 5%;
+    margin: 3% 5%;
+}
+
+
+
+
+.chat-btn-back-mob{
+    position: fixed;
+    font-size: 3vh;
+    top: .8%;
+    right: 10%;
+    }
+    

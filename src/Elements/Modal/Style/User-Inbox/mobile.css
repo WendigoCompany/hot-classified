@@ -1,0 +1,31 @@
+
+.usinb-modal-close-mob{
+    font-size: 3vh;
+    margin: 2% 2%;
+    }
+    
+    
+    
+    
+    .usinb-modal-cont-mob{
+        width: 90vw;
+        height: 99vh;
+        top: 0;
+        overflow-wrap: break-word;
+    }
+    
+
+.minb-chang-page-cont-mob{
+    position: fixed;
+    bottom: 7%;
+    left: 16%;
+    width: 100%;
+}
+
+.mind-btn-mob{
+    font-size: 4vh;
+    margin: 0% 10% 0% 10%;
+    color: #4baabd;
+    background-color: #000000;
+    border: 3px solid #4baabd;
+}
