@@ -1,7 +1,39 @@
 import { useState } from "react";
 import { useRezise } from "../../../../Context/Mobile";
-import "./style/manifiest.css"
+import "./style/manifiest.css";
+import Mobile_Card from "./Mobile.Card";
 
+const add_msj = (new_msj) => {
+  const msj = {
+    amm: 0,
+    ids: [],
+    readed: 0,
+  };
+
+  const amm = JSON.parse(sessionStorage.getItem("msj"));
+
+  if (amm !== null && Array.isArray(amm.ids)) {
+    const found = amm.ids.filter((mdb) => mdb.wid == new_msj.wid);
+    if (found.length === 0) {
+      new_msj.mid = [new_msj.mid];
+      amm.ids.push(new_msj);
+    } else {
+      const index = amm.ids.indexOf(found[0]);
+      amm.ids[index].mid.push(new_msj.mid);
+      amm.ids[index].no_read ++ 
+
+    }
+    sessionStorage.setItem("msj", JSON.stringify(amm));
+  } else {
+    sessionStorage.setItem("msj", JSON.stringify(msj));
+  }
+};
+
+// add_msj({
+//   wid: 1,
+//   mid: 1,
+//   no_read : 0
+// });
 export default function Inbox_Container({}) {
   const msj = {
     amm: 0,
@@ -37,7 +69,15 @@ export default function Inbox_Container({}) {
   const display_desktop_inbox = () => {};
 
   const display_mobile_inbox = () => {
+    console.log(ammtMsj.ids);
     if (ammtMsj.ids.length !== 0) {
+      const elements = [];
+      ammtMsj.ids.map(data_mjs => {
+        elements.push(<div>
+          <Mobile_Card data={data_mjs}></Mobile_Card>
+        </div>)
+      })
+      return elements
     } else {
       return (
         <div className={`inb-empty-cont inb-empty-cont-${device}`}>
