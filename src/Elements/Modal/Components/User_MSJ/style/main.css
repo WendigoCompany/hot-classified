@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+/* 
+
+font-family: 'Tektur', cursive;
+
+
+
+*/
+
+.nemsj-cont {
+    position: fixed;
+    background-color: #a2a2a2f4;
+
+}
+
+
+.nemsj-lab {
+    font-family: 'Tektur', cursive;
+    text-shadow: #474747 3px 5px 2px, #474747 3px 5px 2px, #474747 3px 5px 2px;
+    color: #d4f6fe;
+
+}
+
+
+.nemsj-input {
+    font-family: 'Tektur', cursive;
+    background-color: transparent;
+}
+
+
+.nemsj-input::placeholder {
+    color: #ffffff;
+}
+
+
+
+
+.nemsj-area {
+    font-family: 'Tektur', cursive;
+    background-color: transparent;
+}
+
+.nemsj-area::placeholder {
+    color: #ffffff;
+}
+
+.nemsj-btn{
+    font-family: 'Tektur', cursive;
+    background-image: url('../../../../../media/send_icon.png');
+    background-color: #7186d9;
+}
+
+.nemsj-btn-close{
+    color: #ff8787;
+    background-color: transparent;
+    border-color: #ff8787;
+}

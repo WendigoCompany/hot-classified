@@ -1,0 +1,61 @@
+.nemsj-cont-mob {
+    top: 20%;
+    left: 2%;
+    z-index: 100;
+    border-radius: 1%;
+    width: 95vw;
+    height: 68vh;
+}
+
+
+
+.nemsj-elem-mob {
+    margin: 0% 3%;
+}
+
+
+
+.nemsj-lab-mob {
+
+    font-size: 2.5vh;
+}
+
+
+
+
+
+.nemsj-input-mob {
+    font-size: 2.5vh;
+    width: 90%;
+    border: 2px solid #000000;
+    border-radius: 2%;
+}
+
+
+
+.nemsj-area-mob {
+    font-size: 2.5vh;
+    width: 90%;
+    height: 180px;
+    border: 2px solid #000000;
+    border-radius: 2%;
+}
+
+.nemsj-btn-mob{
+    width: 85%;
+    height: 50px;
+    background-size: 20% 100%;
+    margin: 8% 3%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+.nemsj-btn-close-mob{
+    display: inline-block;
+    font-size: 3vh;
+    margin: 2% 2%;
+    }
+    

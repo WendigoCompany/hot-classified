@@ -13,6 +13,9 @@ import {
 import { github_url } from "../../../App";
 import { set_img_index } from "../Functions/img_index";
 import { getDisclaim } from "../../../Context/Disclaim";
+import { useState } from "react";
+import { useModal } from "../../../Context/Modal";
+import Modal_NewMsj from "../../Modal/Components/User_MSJ/Modal.usermsj";
 
 
 const basicURL =
@@ -45,7 +48,7 @@ export default function Profile() {
   showText();
 
   const device = useRezise();
-
+  const setModal = useModal();
 
   const prevent_disclaim =()=>{
     if((JSON.parse(sessionStorage.getItem("disclaim")) !== null)){
@@ -109,7 +112,9 @@ export default function Profile() {
       <div className={`pro-desc-cont pro-desc-cont-${device}`}>
         <p id="pro-description" className={` pro-desc pro-desc-${device}`}></p>
 
-        <button className={`pro-spec-btn pro-spec-btn-${device}`}>
+        <button className={`pro-spec-btn pro-spec-btn-${device}`} onClick={()=>{
+          setModal(<Modal_NewMsj></Modal_NewMsj>);
+        }}>
           SEND A PRIVATE MESSAGE
         </button>
         <br />
@@ -135,7 +140,7 @@ export default function Profile() {
       </div>
 
 {prevent_disclaim()}
-      
+
     </div>
   );
 }
