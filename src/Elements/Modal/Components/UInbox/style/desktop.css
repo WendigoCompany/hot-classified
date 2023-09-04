@@ -9,7 +9,9 @@
     font-family: 'Tektur', cursive;
     text-align: center;
     font-size: 5vh;
-    margin: 50% 0%;
+    margin: 10% 0%;
+    color: #c3c3c3;
+    width: 30%;
     text-shadow: #474747 3px 5px 2px, #474747 3px 5px 2px, #474747 3px 5px 2px;
 }
 

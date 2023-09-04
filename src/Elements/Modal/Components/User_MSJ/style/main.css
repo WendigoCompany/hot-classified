@@ -26,6 +26,7 @@ font-family: 'Tektur', cursive;
 .nemsj-input {
     font-family: 'Tektur', cursive;
     background-color: transparent;
+    transition: border .2s;
 }
 
 

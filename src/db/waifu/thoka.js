@@ -89,5 +89,15 @@ export default function create_thoka_yatogami() {
     "デート・ア・ライブ",
     "约会大作战",
   ];
+
+  main_data.name = "thoka yatogami"
+
+  main_data.chat=[
+    {
+      id: 0,
+      txt : "HUMU!!"
+    }
+  ]
+
   add_waifu(main_data);
 }

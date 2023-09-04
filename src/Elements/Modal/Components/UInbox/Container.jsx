@@ -5,40 +5,13 @@ import Mobile_Card from "./Mobile.Card";
 import Desktop_Card from "./Desktop.Card";
 import Chat from "./Chat";
 
-const add_msj = (new_msj) => {
-  const msj = {
-    amm: 0,
-    ids: [],
-    readed: 0,
-  };
 
-  const amm = JSON.parse(sessionStorage.getItem("msj"));
-
-  if (amm !== null && Array.isArray(amm.ids)) {
-    const found = amm.ids.filter((mdb) => mdb.wid == new_msj.wid);
-    if (found.length === 0) {
-      new_msj.mid = new_msj.mid;
-      amm.ids.push(new_msj);
-    } else {
-      const index = amm.ids.indexOf(found[0]);
-      amm.ids[index].mid = new_msj.mid;
-    }
-    sessionStorage.setItem("msj", JSON.stringify(amm));
-  } else {
-    sessionStorage.setItem("msj", JSON.stringify(msj));
-  }
-};
-
-// add_msj({
-//   wid: 1,
-//   mid: 0,
-// });
 sessionStorage.removeItem("modal");
 export default function Inbox_Container({}) {
   const msj = {
     amm: 0,
     ids: [],
-    readed: 0,
+    readed: false,
   };
 
   const [ammtMsj, setAmmMsj] = useState(
@@ -61,8 +34,6 @@ export default function Inbox_Container({}) {
         if (Math.floor(i / 3) === page) {
           elements.push(
             <div>
-              <Desktop_Card setChat={setChat} data={data_mjs}></Desktop_Card>
-              <Desktop_Card setChat={setChat} data={data_mjs}></Desktop_Card>
               <Desktop_Card setChat={setChat} data={data_mjs}></Desktop_Card>
             </div>
           );
@@ -100,6 +71,7 @@ export default function Inbox_Container({}) {
       );
       setCards(elements);
     } else {
+
       setCards(
         <div className={`inb-empty-cont inb-empty-cont-${device}`}>
           <h3 className={`inb-empty-msj inb-empty-msj-${device}`}>

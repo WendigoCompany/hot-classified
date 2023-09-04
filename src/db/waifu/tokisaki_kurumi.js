@@ -89,14 +89,6 @@ export default function create_kurumi_tokisaki() {
     🕒 Max: [ask to the girl] hour/s. <br>
   `;
 
-  main_data.name = "Kurumi Tokisaki"
-
-  main_data.chat=[
-    {
-      id: 0,
-      txt : "COME PUTO!"
-    }
-  ]
 
   main_data.img_gall = [
     "toki_kurumi/tokikurumi_1.png",
@@ -129,5 +121,15 @@ export default function create_kurumi_tokisaki() {
     "デート・ア・ライブ",
     "约会大作战",
   ];
+
+  main_data.name = "Kurumi Tokisaki"
+
+  main_data.chat=[
+    {
+      id: 0,
+      txt : "COME PUTO!"
+    }
+  ]
+
   add_waifu(main_data);
 }
