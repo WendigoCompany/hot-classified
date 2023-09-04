@@ -16,7 +16,7 @@ import { getDisclaim } from "../../../Context/Disclaim";
 import { useState } from "react";
 import { useModal } from "../../../Context/Modal";
 import Modal_NewMsj from "../../Modal/Components/User_MSJ/Modal.usermsj";
-
+import User_Banner from "../../Msj/Components/User_Banner";
 
 const basicURL =
   "https://raw.githubusercontent.com/PowderMaid/classificated/main/";
@@ -40,7 +40,6 @@ export const getParams = () => {
   waifu_data = get_waifu_data(parseInt(params));
 };
 
-
 export default function Profile() {
   const { validator } = getDisclaim();
   validator();
@@ -50,82 +49,103 @@ export default function Profile() {
   const device = useRezise();
   const setModal = useModal();
 
-  const prevent_disclaim =()=>{
-    if((JSON.parse(sessionStorage.getItem("disclaim")) !== null)){
-      return <>
-      <div
-        onClick={(e) => {
-          hide(e);
-        }}
-        id="pro-img-visu-cont"
-        className={`pro-img-visu-cont  pro-img-visu-cont-${device}`}
-      >
-        <button className={`pro-close-btn pro-close-btn-${device}`} id="pro-close-btn">X</button>
-        <img
-          id="pro-sho-img"
-          className={`pro-img-visu pro-img-visu-${device}`}
-          alt=""
-        />
-
-        <div className={`pro-img-arrow pro-img-arrow-${device} pro-img-arrow-prev-${device}`} onClick={()=>{
-          changeImg('prev',waifu_data);
-        }}>{`<`}</div>
-        <div className={`pro-img-arrow pro-img-arrow-${device} pro-img-arrow-next-${device}`} onClick={()=>{
-          changeImg('next',waifu_data);
-        }}>{`>`}</div>
-      </div>
-
-      <div className={`pro-title-cont pro-title-cont-${device}`}>
-        <h1 className={`pro-title pro-title-${device}`}>
-          {"hot classified".toUpperCase()}
-        </h1>
-      </div>
-
-      <div className={`pro-ads-cont pro-ads-cont-${device}`}>
-        <h3
-          onClick={() => {
-            set_img_index(0);
-            show(waifu_data.img_main);
-          }}
-          style={{
-            backgroundImage: `url('${basicURL + waifu_data.img_main}')`,
-          }}
-          className={`pro-ads-img pro-ads-img-${device}`}
-        ></h3>
-      </div>
-
-      <div className={`pro-gall-cont pro-gall-cont-${device}`}>
-        {waifu_data.img_gall.map((img, i) => (
-          <h3
-            onClick={() => {
-              set_img_index(i);
-              show(img);
+  const prevent_disclaim = () => {
+    if (JSON.parse(sessionStorage.getItem("disclaim")) !== null) {
+      return (
+        <>
+          <User_Banner></User_Banner>
+          <div
+            onClick={(e) => {
+              hide(e);
             }}
-            style={{
-              backgroundImage: `url('${basicURL + img}')`,
-            }}
-            className={`pro-gall-img pro-gall-img-${device}`}
-          ></h3>
-        ))}
-      </div>
+            id="pro-img-visu-cont"
+            className={`pro-img-visu-cont  pro-img-visu-cont-${device}`}
+          >
+            <button
+              className={`pro-close-btn pro-close-btn-${device}`}
+              id="pro-close-btn"
+            >
+              X
+            </button>
+            <img
+              id="pro-sho-img"
+              className={`pro-img-visu pro-img-visu-${device}`}
+              alt=""
+            />
 
-      <div className={`pro-desc-cont pro-desc-cont-${device}`}>
-        <p id="pro-description" className={` pro-desc pro-desc-${device}`}></p>
+            <div
+              className={`pro-img-arrow pro-img-arrow-${device} pro-img-arrow-prev-${device}`}
+              onClick={() => {
+                changeImg("prev", waifu_data);
+              }}
+            >{`<`}</div>
+            <div
+              className={`pro-img-arrow pro-img-arrow-${device} pro-img-arrow-next-${device}`}
+              onClick={() => {
+                changeImg("next", waifu_data);
+              }}
+            >{`>`}</div>
+          </div>
 
-        <button className={`pro-spec-btn pro-spec-btn-${device}`} onClick={()=>{
-          setModal(<Modal_NewMsj></Modal_NewMsj>);
-        }}>
-          SEND A PRIVATE MESSAGE
-        </button>
-        <br />
-        <button className={`pro-spec-btn pro-spec-btn-${device}`}>
-          GET HER NUMBER
-        </button>
-      </div></>
-    }else{
+          <div className={`pro-title-cont pro-title-cont-${device}`}>
+            <h1 className={`pro-title pro-title-${device}`}>
+              {"hot classified".toUpperCase()}
+            </h1>
+          </div>
+
+          <div className={`pro-ads-cont pro-ads-cont-${device}`}>
+            <h3
+              onClick={() => {
+                set_img_index(0);
+                show(waifu_data.img_main);
+              }}
+              style={{
+                backgroundImage: `url('${basicURL + waifu_data.img_main}')`,
+              }}
+              className={`pro-ads-img pro-ads-img-${device}`}
+            ></h3>
+          </div>
+
+          <div className={`pro-gall-cont pro-gall-cont-${device}`}>
+            {waifu_data.img_gall.map((img, i) => (
+              <h3
+                onClick={() => {
+                  set_img_index(i);
+                  show(img);
+                }}
+                style={{
+                  backgroundImage: `url('${basicURL + img}')`,
+                }}
+                className={`pro-gall-img pro-gall-img-${device}`}
+              ></h3>
+            ))}
+          </div>
+
+          <div className={`pro-desc-cont pro-desc-cont-${device}`}>
+            <p
+              id="pro-description"
+              className={` pro-desc pro-desc-${device}`}
+            ></p>
+
+            <button
+              className={`pro-spec-btn pro-spec-btn-${device}`}
+              onClick={() => {
+                setModal(<Modal_NewMsj></Modal_NewMsj>);
+              }}
+            >
+              SEND A PRIVATE MESSAGE
+            </button>
+            <br />
+            <button className={`pro-spec-btn pro-spec-btn-${device}`}>
+              GET HER NUMBER
+            </button>
+          </div>
+        </>
+      );
+    } else {
       return "";
     }
-  }
+  };
   return (
     <div>
       <div className={`pro-close`}>
@@ -139,8 +159,7 @@ export default function Profile() {
         </button>
       </div>
 
-{prevent_disclaim()}
-
+      {prevent_disclaim()}
     </div>
   );
 }

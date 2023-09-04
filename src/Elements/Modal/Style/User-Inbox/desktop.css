@@ -1,0 +1,46 @@
+.usinb-modal-close-desk {
+    font-size: 4vh;
+    margin: 1% 1%;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+
+.usinb-modal-close-desk:hover {
+    color: #000000;
+    background-color: #ff8787;
+    border-color: #ff8787;
+    
+}
+
+
+.usinb-modal-cont-desk {
+    width: 90vw;
+    height: 99vh;
+    top: 0;
+    overflow-wrap: break-word;
+}
+
+
+.minb-chang-page-cont-desk {
+    position: fixed;
+    bottom: 10%;
+    left: 6%;
+    width: 100%;
+
+}
+
+.mind-btn-desk {
+    font-size: 4vh;
+    margin: 0% 4% 0% 4%;
+    color: #4baabd;
+    background-color: #000000;
+    border: 3px solid #4baabd;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+
+.mind-btn-desk:hover{
+    color: #000000;
+    background-color: #4baabd;
+    border: 3px solid #4baabd; 
+}

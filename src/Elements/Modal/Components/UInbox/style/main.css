@@ -34,7 +34,7 @@ font-family: 'Tektur', cursive;
     font-family: 'Tektur', cursive;
     text-shadow: #000000 3px 5px 2px,#000000 3px 5px 2px,#000000 3px 5px 2px;
     color: #e8fbfb;
-    
+    word-wrap: break-word;
 }
 
 

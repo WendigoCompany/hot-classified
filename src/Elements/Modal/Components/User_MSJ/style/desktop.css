@@ -1,0 +1,74 @@
+.nemsj-cont-desk {
+    top: 20%;
+    left: 20%;
+    z-index: 100;
+    border-radius: 1%;
+    width: 60vw;
+    height: 75vh;
+}
+
+
+
+.nemsj-elem-desk {
+
+    margin: -10% 0% 0% 10%;
+
+}
+
+
+
+.nemsj-lab-desk {
+    font-size: 4vh;
+}
+
+
+
+
+
+.nemsj-input-desk {
+    font-size: 2.5vh;
+    width: 90%;
+    border: 2px solid #000000;
+    border-radius: 2%;
+}
+
+
+
+.nemsj-area-desk {
+    font-size: 2.5vh;
+    width: 90%;
+    height: 180px;
+    border: 2px solid #000000;
+    border-radius: 2%;
+}
+
+.nemsj-btn-desk{
+    width: 70%;
+    height: 50px;
+    background-size: 10% 100%;
+    margin: 4% 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: background-color .2s, color .2s;
+    background-color: #3b4672;
+}
+
+.nemsj-btn-desk:hover{
+    background-color: #7186d9;
+}
+
+
+.nemsj-btn-close-desk{
+    display: inline-block;
+    font-size: 3vh;
+    margin: 2% 2%;
+    cursor: pointer;
+    transition: background-color .2s, color .2s;
+    }
+    
+    .nemsj-btn-close-desk:hover{
+        color: #000000;
+    background-color: #ff8787;
+    border-color: #ff8787;
+    }
