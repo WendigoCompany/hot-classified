@@ -44,7 +44,7 @@ export default function Chat({ data, setCards }) {
               <button className={`chat-btn chat-btn-${device}`} onClick={()=>{
        
                const txt = process_user_msj(document.getElementById("chat-msj").value,waifu_data.id);
-                reload_chat(txt,waifu_data.id);
+                reload_chat(waifu_data.id);
                 document.getElementById("chat-msj").value = ""; 
               }}> </button>
             </div>
@@ -66,7 +66,7 @@ export default function Chat({ data, setCards }) {
               <button className={`chat-btn chat-btn-${device}`} onClick={()=>{
      
                const txt = process_user_msj(document.getElementById("chat-msj").value,waifu_data.id);
-               reload_chat(txt,waifu_data.id);
+               reload_chat(waifu_data.id);
                document.getElementById("chat-msj").value = ""; 
               }}> </button>
             </div>

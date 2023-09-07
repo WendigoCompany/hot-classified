@@ -96,12 +96,12 @@ export default function create_thoka_yatogami() {
     {
       id: 0,
       key_words : [],
-      txt : "Hi! {player}! How are you!"
+      txt : ["Hi! {player}! How are you!"]
     },
     {
       id: 1,
       key_words : ["how are you", "are you fine"],
-      txt : "Fine! "
+      txt : [ "Fine!", "Good!"]
     }
   ]
 
