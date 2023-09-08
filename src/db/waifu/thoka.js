@@ -94,6 +94,11 @@ export default function create_thoka_yatogami() {
 
   main_data.chat=[
     {
+      id:-1,
+      key_words : [],
+      txt : ["I don't kwon"]
+    },
+    {
       id: 0,
       key_words : [],
       txt : ["Hi! {player}! How are you!"]

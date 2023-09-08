@@ -1,21 +1,29 @@
 import { useState } from "react";
 import { useRezise } from "../../../../Context/Mobile";
-import { get_username, process_msj, process_user_msj, process_username, reload_chat } from "../../../../db/brain/process_userdata";
+import {
+  get_username,
+  process_msj,
+  process_user_msj,
+  process_username,
+  reload_chat,
+} from "../../../../db/brain/process_userdata";
 import { get_waifus } from "../../../../db/waifu.class";
 
 const load_chat = () => {};
+
+
 
 export default function Chat({ data, setCards }) {
   const waifus = get_waifus();
   const device = useRezise();
   let waifu_data;
+  let waifu_profile = -1;
   const find_waifu = () => {
     waifu_data = waifus.filter((w) => w.id == data.wid)[0];
   };
 
 
   const show_chats = () => {
-
     if (waifu_data !== undefined) {
       const elements = [
         <div className={`chat-cont chat-cont-${device}`}>
@@ -29,46 +37,70 @@ export default function Chat({ data, setCards }) {
       let dialog = waifu_data.chat.filter((ch) => ch.id === data.mid)[0];
       process_username(waifu_data.id);
       if (dialog !== undefined) {
-        dialog = process_msj(dialog) ;
+        dialog = process_msj(dialog);
         elements.push(
           <div className={`dialog-cont dialog-cont-${device}`}>
             <img src="" alt="" />
-            <h3 className={`dialog-txt dialog-txt-${device}`}>{dialog.txt} </h3>
+            <h3
+              id="dialog-txt-chat"
+              className={`dialog-txt dialog-txt-${device}`}
+            >
+              {dialog.txt}{" "}
+            </h3>
             <div className={`user-interacction user-interacction-${device}`}>
               <input
-                            id="chat-msj"
+                id="chat-msj"
                 type="text"
                 className={`chat-input chat-input-${device}`}
               />
               <br />
-              <button className={`chat-btn chat-btn-${device}`} onClick={()=>{
-       
-               const txt = process_user_msj(document.getElementById("chat-msj").value,waifu_data.id);
-                reload_chat(waifu_data.id);
-                document.getElementById("chat-msj").value = ""; 
-              }}> </button>
+              <button
+                id="chat-btn"
+                className={`chat-btn chat-btn-${device}`}
+                onClick={() => {
+                  const txt = process_user_msj(
+                    document.getElementById("chat-msj").value,
+                    waifu_data.id
+                  );
+                  reload_chat(waifu_data.id);
+                  document.getElementById("chat-msj").value = "";
+                }}
+              >
+                {" "}
+              </button>
             </div>
           </div>
         );
       } else {
         elements.push(
           <div className={`dialog-cont dialog-cont-${device}`}>
-            <h3 id="dialog-txt-chat" className={`dialog-txt dialog-txt-${device}`}>
-              {"Error loading dialog... Sorry =_("}
+            <h3
+              id="dialog-txt-chat"
+              className={`dialog-txt dialog-txt-${device}`}
+            >
+              {""}
             </h3>
             <div className={`user-interacction user-interacction-${device}`}>
               <input
-              id="chat-msj"
+                id="chat-msj"
                 type="text"
                 className={`chat-input chat-input-${device}`}
               />
               <br />
-              <button className={`chat-btn chat-btn-${device}`} onClick={()=>{
-     
-               const txt = process_user_msj(document.getElementById("chat-msj").value,waifu_data.id);
-               reload_chat(waifu_data.id);
-               document.getElementById("chat-msj").value = ""; 
-              }}> </button>
+              <button
+                id="chat-btn"
+                className={`chat-btn chat-btn-${device}`}
+                onClick={() => {
+                  const txt = process_user_msj(
+                    document.getElementById("chat-msj").value,
+                    waifu_data.id
+                  );
+                  reload_chat(waifu_data.id);
+                  document.getElementById("chat-msj").value = "";
+                }}
+              >
+                {" "}
+              </button>
             </div>
           </div>
         );
@@ -92,12 +124,22 @@ export default function Chat({ data, setCards }) {
       //     );
       //   }
       // });
-
+      window.onkeydown = (e) => {
+        if (e.key === "Enter" &&      document.getElementById("chat-msj") !== null) {
+          const txt = process_user_msj(
+            document.getElementById("chat-msj").value,
+            waifu_data.id
+          );
+          reload_chat(waifu_data.id);
+          document.getElementById("chat-msj").value = "";
+        }
+      };
       return elements;
     } else {
       return "";
     }
   };
+
   find_waifu();
 
   const desk = () => {
@@ -119,6 +161,5 @@ export default function Chat({ data, setCards }) {
       </div>
     );
   };
-  return <div>{device === "mob" ? mob() : desk()}
-  </div>;
+  return <div>{device === "mob" ? mob() : desk()}</div>;
 }

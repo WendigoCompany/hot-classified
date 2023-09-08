@@ -86,6 +86,7 @@ export const reload_chat = (id) => {
 
     let dialog = JSON.parse(sessionStorage.getItem("msj")).ids;
     dialog = dialog.filter((w) => w.wid === waifu.id)[0];
+    dialog = waifu.chat.filter((cid) => cid.id === dialog.mid)[0];
 
     // const len = waifu.chat[dialog].txt.length;
     // //  console.log(waifu.chat[dialog].txt);
@@ -100,18 +101,57 @@ export const reload_chat = (id) => {
     // }
 
     let txt;
-    if (dialog.mid === -1) {
-      txt = "Error loading dialog... Sorry =_(";
-    } else {
-      try {
-        const len = waifu.chat[dialog.mid].txt.length;
-        const index = random_dialog(len);
-        txt = waifu.chat[dialog.mid].txt[index];
-      } catch (error) {}
-    }
 
-    exec_async(() => {
-      document.getElementById("dialog-txt-chat").textContent = txt;
-    });
+    try {
+      const len = dialog.txt.length;
+      const index = random_dialog(len);
+      txt = dialog.txt[index];
+
+      // console.log( dialog.mid);
+      // const len = waifu.chat[dialog.mid].txt.length;
+      // const index = random_dialog(len);
+      // txt = waifu.chat[dialog.mid].txt[index];
+    } catch (error) {}
+
+    animation_change_dialog(txt);
+
+    // exec_async(() => {
+    //   document.getElementById("dialog-txt-chat").textContent = txt;
+    // });
   }
 };
+
+const load_animation = (txt) => {
+  document.getElementById("chat-btn").disabled = true;
+  let word_ind = 0;
+
+  let int = setInterval(() => {
+    const dia = txt.substring(0, word_ind);
+    document.getElementById("dialog-txt-chat").textContent = dia;
+    if(word_ind === (txt.length)){
+      clearInterval(int)
+      document.getElementById("chat-btn").disabled = false;
+    }else{
+      word_ind++
+    }
+  }, 25);
+
+  // setTimeout(() => {
+  //   document.getElementById("chat-btn").disabled = false;
+  // }, 5000);
+};
+
+const animation_change_dialog = (txt) => {
+  let breaker = "";
+  document.body.style.cursor = "wait";
+  let int = setInterval(() => {
+    try {
+      document.getElementById("dialog-txt-chat").textContent = " ";
+      load_animation(txt);
+
+      document.body.style.cursor = "default";
+      clearInterval(int);
+    } catch (error) {}
+  }, 500);
+};
+// document.body.style.cursor= "default";

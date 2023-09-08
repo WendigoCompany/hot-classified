@@ -126,10 +126,20 @@ export default function create_kurumi_tokisaki() {
 
   main_data.chat=[
     {
+      id:-1,
+      key_words : [],
+      txt : ["La cagaste pibe!!!"]
+    },
+    {
       id: 0,
-      txt : "COME PUTO!"
+      key_words : [],
+      txt : ["SE ARMO PIBARDA, NO {player}"]
+    },
+    {
+      id: 1,
+      key_words : ["how are you", "are you fine"],
+      txt : [ "Niche niche", "Fantastico"]
     }
   ]
-
   add_waifu(main_data);
 }
