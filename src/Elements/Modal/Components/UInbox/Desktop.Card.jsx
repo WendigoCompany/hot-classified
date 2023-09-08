@@ -1,4 +1,4 @@
-import { reload_chat } from "../../../../db/brain/process_userdata";
+import { process_username, reload_chat } from "../../../../db/brain/process_userdata";
 import { get_waifus } from "../../../../db/waifu.class";
 import Chat from "./Chat";
 
@@ -31,6 +31,7 @@ export default function Desktop_Card({ data, setChat }) {
     <div
       className={`deskcard-wai-card`}
       onClick={() => {
+        process_username(data.wid);
         reload_chat(data.wid);
         setChat(<Chat data={data}></Chat>);
       }}

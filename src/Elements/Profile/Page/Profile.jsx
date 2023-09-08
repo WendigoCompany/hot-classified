@@ -49,6 +49,8 @@ export default function Profile() {
   const device = useRezise();
   const setModal = useModal();
 
+
+  sessionStorage.setItem("profile", waifu_data.id)
   const prevent_disclaim = () => {
     if (JSON.parse(sessionStorage.getItem("disclaim")) !== null) {
       return (
@@ -96,6 +98,7 @@ export default function Profile() {
           <div className={`pro-ads-cont pro-ads-cont-${device}`}>
             <h3
               onClick={() => {
+                
                 set_img_index(0);
                 show(waifu_data.img_main);
               }}

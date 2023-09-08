@@ -12,6 +12,7 @@ const add_msj = (new_msj) => {
 
   const amm = JSON.parse(sessionStorage.getItem("msj"));
 
+
   if (amm !== null && Array.isArray(amm.ids)) {
     const found = amm.ids.filter((mdb) => mdb.wid == new_msj.wid);
     if (found.length === 0) {

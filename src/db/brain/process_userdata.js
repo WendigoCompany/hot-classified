@@ -79,6 +79,10 @@ const random_dialog = (max) => {
   return Math.floor(Math.random() * max);
 };
 
+const name_replacer = (txt) => {
+  return txt.replace("{player}", username);
+};
+
 export const reload_chat = (id) => {
   if (id !== undefined) {
     let waifu = get_waifus();
@@ -101,17 +105,18 @@ export const reload_chat = (id) => {
     // }
 
     let txt;
-
     try {
       const len = dialog.txt.length;
       const index = random_dialog(len);
       txt = dialog.txt[index];
-
+      txt = name_replacer(txt);
       // console.log( dialog.mid);
       // const len = waifu.chat[dialog.mid].txt.length;
       // const index = random_dialog(len);
       // txt = waifu.chat[dialog.mid].txt[index];
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
 
     animation_change_dialog(txt);
 
@@ -128,11 +133,11 @@ const load_animation = (txt) => {
   let int = setInterval(() => {
     const dia = txt.substring(0, word_ind);
     document.getElementById("dialog-txt-chat").textContent = dia;
-    if(word_ind === (txt.length)){
-      clearInterval(int)
+    if (word_ind === txt.length) {
+      clearInterval(int);
       document.getElementById("chat-btn").disabled = false;
-    }else{
-      word_ind++
+    } else {
+      word_ind++;
     }
   }, 25);
 
